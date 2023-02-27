@@ -12,12 +12,13 @@ namespace LinkedListProblems
 
             LinkedList linked = new LinkedList();
             linked.Add(56);
+            linked.Add(30);
             linked.Add(70);
             linked.Display();
 
-            Console.WriteLine("After inserting:");
+            Console.WriteLine("After popping first element..");
 
-            linked.AddAtPosition(2, 30);
+            linked.Pop();
             linked.Display();
         }
     }

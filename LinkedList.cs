@@ -18,7 +18,6 @@ namespace LinkedListProblems
             {
                 Console.WriteLine("Invalid position");
             }
-            
             if (position == 1)
             {
                 newNode.next = head;
@@ -26,17 +25,13 @@ namespace LinkedListProblems
             }
             else
             {
-                
                 int currentPosition = 1;
-                
                 Node tempHead = head;
-
                 while (currentPosition++ != position)
                 {
                     if (currentPosition == position)
                     {
                         newNode.next = tempHead.next;
-
                         tempHead.next = newNode;
                         Console.WriteLine(newNode.data + " is added at position " + position);
                         break;
@@ -69,6 +64,17 @@ namespace LinkedListProblems
                 temp.next = node;
             }
             Console.WriteLine("{0} Added to linked list ", node.data);
+        }
+
+        internal void Pop()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("Linked List is empty");
+                return;
+            }
+            Console.WriteLine("The first node having data " + head.data + " is deleted from the list");
+            head = head.next;
         }
 
         public void Display()
