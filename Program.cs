@@ -16,9 +16,8 @@ namespace LinkedListProblems
             linked.Add(70);
             linked.Display();
 
-            Console.WriteLine("After popping first element..");
-
-            linked.Pop();
+            Console.WriteLine("After deleting last element");
+            linked.PopLast();
             linked.Display();
         }
     }

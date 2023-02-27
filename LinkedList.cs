@@ -77,6 +77,26 @@ namespace LinkedListProblems
             head = head.next;
         }
 
+        internal void PopLast()
+        {
+            Node newNode = head;
+            if (head == null)
+            {
+                Console.WriteLine("Linked List is empty");
+                return;
+            }
+            if (head.next == null)
+            {
+                this.head = null;
+            }
+            while (newNode.next.next != null)
+            {
+                newNode = newNode.next;
+            }
+            Console.WriteLine("The last node having data " + newNode.next.data + " is deleted from the list");
+            newNode.next = null;
+        }
+
         public void Display()
         {
             Node temp = this.head;
