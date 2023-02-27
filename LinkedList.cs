@@ -112,6 +112,30 @@ namespace LinkedListProblems
             if (temp == null)
                 Console.WriteLine("Given value: " + value + " is not present in Linked list");
         }
+
+        internal void InsertAfter(int value, int data)
+        {
+            Node tempHead = head;
+            Node newNode = new Node(data);
+
+            if (head == null)
+            {
+                Console.WriteLine("Linked List is empty");
+                return;
+            }
+
+            while (tempHead.next != null)
+            {
+                if (tempHead.data == value)
+                {
+                    Console.WriteLine(newNode.data + " is inserted after " + tempHead.data);
+                    newNode.next = tempHead.next;
+                    tempHead.next = newNode;
+                    break;
+                }
+                tempHead = tempHead.next;
+            }
+        }
         public void Display()
         {
             Node temp = this.head;
