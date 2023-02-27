@@ -8,18 +8,15 @@ namespace LinkedListProblems
         {
             //Console.WriteLine("Welcome to Linked list problems");
 
-            Console.WriteLine("Insert 30 between 56 and 70");
+            LinkedList LL = new LinkedList();
+            Console.WriteLine("Ordered linked list");
+            LL.OrderedList(56);
+            LL.OrderedList(30);
+            LL.OrderedList(40);
+            LL.OrderedList(70);
+            Console.WriteLine("After sorting:");
 
-            LinkedList linked = new LinkedList();
-            linked.Add(56);
-            linked.Add(30);
-            linked.Add(70);
-            linked.Display();
-
-            linked.DeleteValue(40);
-            linked.Display();
-            linked.Size();
-
+            LL.Display();
         }
     }
 }

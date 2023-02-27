@@ -172,6 +172,26 @@ namespace LinkedListProblems
             Console.WriteLine("Linked List size is : " + size);
         }
 
+        internal void OrderedList(int data)
+        {
+            Node newNode = new Node(data);
+            Node tempHead = head;
+            if (head == null || head.data >= newNode.data)
+            {
+                newNode.next = head;
+                head = newNode;
+            }
+            else
+            {
+                while (tempHead.next != null && tempHead.next.data < newNode.data)
+                {
+                    tempHead = tempHead.next;
+                }
+                newNode.next = tempHead.next;
+                tempHead.next = newNode;
+            }
+            Console.WriteLine(newNode.data + " is inserted in the Linked List");
+        }
         public void Display()
         {
             Node temp = this.head;
