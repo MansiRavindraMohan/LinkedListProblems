@@ -8,13 +8,16 @@ namespace LinkedListProblems
         {
             //Console.WriteLine("Welcome to Linked list problems");
 
-            Console.WriteLine("Create linked list by appending 30 and 70 to 56");
+            Console.WriteLine("Insert 30 between 56 and 70");
 
             LinkedList linked = new LinkedList();
-            linked.Append(56);
-            linked.Append(30);
-            linked.Append(70);
+            linked.Add(56);
+            linked.Add(70);
+            linked.Display();
 
+            Console.WriteLine("After inserting:");
+
+            linked.AddAtPosition(2, 30);
             linked.Display();
         }
     }

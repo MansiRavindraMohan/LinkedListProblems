@@ -10,26 +10,44 @@ namespace LinkedListProblems
     {
         public Node head;
 
-        internal void Append(int data)
+        public void AddAtPosition(int position, int data)
         {
-            Node node = new Node(data);
+            Node newNode = new Node(data);
 
-            if (this.head == null)
+            if (position < 1)
             {
-                this.head = node;
+                Console.WriteLine("Invalid position");
+            }
+            
+            if (position == 1)
+            {
+                newNode.next = head;
+                head = newNode;
             }
             else
             {
-                Node temp = head;
+                
+                int currentPosition = 1;
+                
+                Node tempHead = head;
 
-                while (temp.next != null)
+                while (currentPosition++ != position)
                 {
-                    temp = temp.next;
-                }
+                    if (currentPosition == position)
+                    {
+                        newNode.next = tempHead.next;
 
-                temp.next = node;
+                        tempHead.next = newNode;
+                        Console.WriteLine(newNode.data + " is added at position " + position);
+                        break;
+                    }
+                    tempHead = tempHead.next;
+                }
+                if (currentPosition != position)
+                {
+                    Console.WriteLine("Position is out of range");
+                }
             }
-            Console.WriteLine(node.data + " appended to the Linked List");
         }
 
         public void Add(int data)
@@ -66,7 +84,7 @@ namespace LinkedListProblems
                 Console.Write(temp.data + " ");
                 temp = temp.next;
             }
-
+            Console.WriteLine();
         }
     }
 }
