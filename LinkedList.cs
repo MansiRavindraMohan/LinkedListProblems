@@ -136,6 +136,42 @@ namespace LinkedListProblems
                 tempHead = tempHead.next;
             }
         }
+
+
+        internal void DeleteValue(int value)
+        {
+            Node tempHead = head;
+
+            if (head == null)
+            {
+                Console.WriteLine("Linked List is empty");
+                return;
+            }
+            while (tempHead.next != null)
+            {
+                if (tempHead.next.data == value)
+                {
+                    tempHead.next = tempHead.next.next;
+                    Console.WriteLine("The value " + value + " is deleted from the list");
+                }
+                tempHead = tempHead.next;
+            }
+        }
+
+
+        internal void Size()
+        {
+            int size = 0;
+
+            Node tempHead = head;
+            while (tempHead != null)
+            {
+                tempHead = tempHead.next;
+                size++;
+            }
+            Console.WriteLine("Linked List size is : " + size);
+        }
+
         public void Display()
         {
             Node temp = this.head;

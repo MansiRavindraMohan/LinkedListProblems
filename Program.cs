@@ -16,8 +16,9 @@ namespace LinkedListProblems
             linked.Add(70);
             linked.Display();
 
-            linked.InsertAfter(30, 40);
+            linked.DeleteValue(40);
             linked.Display();
+            linked.Size();
 
         }
     }
