@@ -97,6 +97,21 @@ namespace LinkedListProblems
             newNode.next = null;
         }
 
+        internal void Search(int value)
+        {
+            Node temp = this.head;
+            while (temp != null)
+            {
+                if (temp.data == value)
+                {
+                    Console.WriteLine("Given value: " + value + " is present in Linked list");
+                    return;
+                }
+                temp = temp.next;
+            }
+            if (temp == null)
+                Console.WriteLine("Given value: " + value + " is not present in Linked list");
+        }
         public void Display()
         {
             Node temp = this.head;
